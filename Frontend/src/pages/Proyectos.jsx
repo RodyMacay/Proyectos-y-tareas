@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Layaout from "./components/layaout";
+import Layaout from "../components/layaout";
 import { Link } from 'react-router-dom';
-import { VerProyectos } from "./api/llamadas";
+import { VerProyectos } from "../api/llamadas";
 
 function Proyectos() {
     const [proyectos, setproyectos] = useState([]);
@@ -41,10 +41,11 @@ function Proyectos() {
                 </div>
             )}
             <div>
-                <button className="border-solid bg-green-600 py-5 p">
-                    <Link to='/crearproyecto'>Agregar Tareas</Link>
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    <Link to='/crearproyecto'>Agregar Proyecto</Link>
                 </button>
             </div>
+
         </div>
     );
 }

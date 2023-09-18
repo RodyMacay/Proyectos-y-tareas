@@ -1,8 +1,8 @@
-import CrearTarea from "./AgregarTask";
-import Juego from "./Juego";
-import Proyectos from "./Proyectos";
-import Tareas from "./Tareas";
+import CrearTarea from "./pages/AgregarTask";
+import Proyectos from "./pages/Proyectos";
+import Tareas from "./pages/Tareas";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import PagePrincipal from "./pages/Principal";
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
       <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Juego/>}/>
+            <Route path="/" element={<PagePrincipal/>}/>
             <Route path="/proyectos" element={<Proyectos/>}/>
             <Route path="/tareas" element={<Tareas/>}/>
             <Route path="/creartareas" element={<CrearTarea/>}/>

@@ -5,7 +5,7 @@ function Layaout() {
     <div className="bg-blue-500 p-4">
       <ul className="flex space-x-4 text-white">
         <li>
-          <Link to='/' className="hover:underline">Juego</Link>
+          <Link to='/' className="hover:underline">Principal</Link>
         </li>
         <li>
           <Link to='/proyectos' className="hover:underline">Proyectos</Link>

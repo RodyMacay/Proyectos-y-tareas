@@ -1,6 +1,6 @@
 
 import { useForm } from 'react-hook-form';
-import { CrearTask } from './api/llamadas';
+import { CrearTask } from '../api/llamadas';
 import {useNavigate} from 'react-router-dom'
 
 function CrearTarea() {

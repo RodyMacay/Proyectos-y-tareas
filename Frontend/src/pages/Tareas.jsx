@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { VerTareas } from "./api/llamadas";
-import Layaout from "./components/layaout";
+import { VerTareas } from "../api/llamadas";
+import Layaout from "../components/layaout";
 import { Link } from 'react-router-dom';
 
 function Tareas() {
@@ -56,10 +56,11 @@ function Tareas() {
                 </div>
             )}
             <div>
-                <button className="border-solid bg-green-600 py-5 p">
-                    <Link to='/creartareas'>Agregar Tareas</Link>
+                <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <Link to='/crearproyecto'>Agregar Proyecto</Link>
                 </button>
             </div>
+
         </div>
     );
 }
