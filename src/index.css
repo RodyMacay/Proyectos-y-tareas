@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-imagen {
+    background-image: url('../src/assets/OIG.dw.jpeg'); 
+    background-size: cover;
+    background-position: center;
+  }
+  
