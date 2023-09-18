@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% extends 'base.html' %}
+<body>
+    {% block content %}
+    <h1>Mi tareas </h1>
+    {%for tareas in tareas%} 
+        <div class="card">
+            <h1>
+                {{tareas.titulo}},
+                <span>
+                   la tarea pertenece al proyecto: {{tareas.project.nombre}}
+                </span>
+            </h1>
+            <div>
+                {% if tareas.done == False %}
+                <h2>Tarea Pendiente ⏰</h2>
+                 {% else %}
+                <h2>Tareas Realizada ✅</h2>
+                {% endif %}
+
+            </div>
+            <span>
+                {{tareas.descripcion}}
+            </span>
+        </div>
+        <button>
+            Delete
+        </button>
+        {% if tareas.done == True %} 
+        <button>
+            ⏰
+        </button>
+        {% else %}
+        <button>
+            ✅
+        </button>
+        {% endif %}
+        {% endfor%} {# sintaxis de Jinja #}
+        {% endblock %}
+</body>
+</html>

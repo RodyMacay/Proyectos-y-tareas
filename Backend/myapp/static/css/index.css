@@ -1,0 +1,33 @@
+body{
+    background-color:rgb(44, 53, 71);
+    color: whitesmoke
+}
+.navbar{
+    background: #404040;
+    padding: 10px 10px;
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar ul li{
+    list-style: none;
+}
+.navbar ul li a {
+    color: mediumturquoise;
+    text-decoration: none;
+}
+.navbar ul li a:hover {
+    color: rgb(26, 214, 20);
+}
+.container{
+    max-width:1200px ;
+    background: #404040;
+    margin: auto;
+}
+.card{
+    background: whitesmoke;
+    padding: 10px;
+    margin-bottom: 2px;
+    color: rgb(17, 17, 17);
+}

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Proyecto con django</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <nav class="navbar container">
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'proyectos'  %} ">Proyectos</a>
+            </li>
+            <li>
+                <a href="{% url 'CrearProject' %}">Crear Proyecto</a>
+            </li>
+            <li>
+                <a href="{% url 'tareas' %}"> Tareas</a>
+            </li>
+            <li>
+                <a href="{% url 'crearTareas' %}">Crear Tarea</a>
+            </li>
+            <li>
+                <a href="{% url 'acerca' %}">About</a>
+            </li>
+        </ul>
+    </nav>
+    <main class="container">
+        {% block content  %}
+        {% endblock %}
+    </main>
+</body>
+</html>
