@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { VerTareas } from "../api/llamadas";
+import { Eliminartask, VerTareas } from "../api/llamadas";
 import Layaout from "../components/layaout";
 import { Link } from 'react-router-dom';
 
@@ -18,6 +18,20 @@ function Tareas() {
             console.error('Error al obtener las tareas', error);
         }
     };
+    const handleEliminarTask = async (taskid) => {
+        console.log(taskid);
+        try {
+          // Llama a la función EliminarPublicacion con la ID de la publicación
+          await Eliminartask(taskid);
+    
+          // Actualiza la lista de publicaciones después de eliminar
+          settareas((prevtask) =>
+            prevtask.filter((task) => task._id !== taskid)
+          );
+        } catch (error) {
+          console.error('Error al eliminar la publicacion:', error);
+        }
+      };
 
     useEffect(() => {
         obtenerTareas();
@@ -44,7 +58,11 @@ function Tareas() {
                             </div>
                             <p className="mt-2 text-gray-700">{tarea.descripcion}</p>
                             <div className="mt-4 flex justify-between items-center">
-                                <button className="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600">Delete</button>
+                                <button
+                                onClick={() => handleEliminarTask(tarea.id)}
+                                className="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600">
+                                    Delete
+                                    </button>
                                 {tarea.done === true ? (
                                     <button className="bg-yellow-500 text-white py-1 px-2 rounded hover:bg-yellow-600">⏰</button>
                                 ) : (

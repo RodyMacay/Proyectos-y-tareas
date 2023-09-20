@@ -73,3 +73,13 @@ def detailsProject (resquest, id):
         'project': project,
         'tareas': tareas
     })
+
+@csrf_exempt
+def deletetask (resquest, id):
+    try:
+        tarea = get_object_or_404(Tareas, id=id)
+        tarea.delete()
+        return JsonResponse ({'message': "La tarea fue eliminada exitosamente"})
+    except Tareas.DoesNotExist:
+        return JsonResponse({'message' :"La tarea no existe"}, status=404)
+
